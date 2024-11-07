@@ -5,7 +5,6 @@ from flask_sqlalchemy import inspect
 from flask import jsonify
 from itertools import groupby
 from operator import itemgetter
-import json
 
 
 def object_as_dict(obj):
@@ -18,10 +17,6 @@ def dict_as_json(dictionary):
 
 def object_as_json(row):
     return dict_as_json(object_as_dict(row))
-
-
-def jwt_encode(dictionary, key):
-    return jwt.encode(dictionary, key).decode('UTF-8')
 
 
 def str_to_bool(s):
